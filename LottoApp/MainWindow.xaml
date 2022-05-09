@@ -1,0 +1,50 @@
+﻿<Window x:Class="LottoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LottoApp"
+        mc:Ignorable="d"
+        Title="LottoApp" WindowState="Maximized" Width="1920" Height="1080"  Background="LightYellow" FontSize="24">
+    <StackPanel>
+        <Grid>
+            <Label Content="Losowanie Lotto" Background="Yellow" Height="50"
+                     FontSize="30" HorizontalContentAlignment="Center"/>
+            <Button Content="Zamknij" FontWeight="Bold" DockPanel.Dock="Top" 
+                    Width="150" Height="50" HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Background="Red"  Click="Button_Click_1"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Margin="0,25,0,0" Content="Ilość liczb do wylosowania:"></Label>
+            <Grid>
+                <TextBox x:Name="userInput1" Text="6" Width="100" Height="50" Margin="15"
+                            Background="Azure" HorizontalContentAlignment="Center" 
+                            VerticalContentAlignment="Center"/>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Center" 
+                       Content="" Foreground="Red" FontWeight="Bold" x:Name="error1"></Label>
+            </Grid>
+
+            <Label Content="Z ilu liczb losować:"></Label>
+            <Grid>
+                <TextBox x:Name="userInput2" Text="49" Width="100" Height="50" Margin="15"
+                           Background="Azure" HorizontalContentAlignment="Center" 
+                           VerticalContentAlignment="Center"/>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Center" 
+                       Content="" Foreground="Red" FontWeight="Bold" x:Name="error2"></Label>
+            </Grid>
+            <WrapPanel>
+                <Button Width="200" Height="50" Margin = "10" Content="Losuj" Click="Button_Click"></Button>
+                <Button Width="200" Height="50" Margin = "10" Content="Wyczyść wyniki" Click="Button_Click_Clean"></Button>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel>
+            <Label Content="Wylosowane liczby:" HorizontalAlignment="Center" Margin="0,25,0,0"></Label>
+            <TextBox x:Name="result" VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                 Background="Aquamarine" Height="500" Width="1500" Margin="10" 
+                 HorizontalContentAlignment="Stretch" Padding="10"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
